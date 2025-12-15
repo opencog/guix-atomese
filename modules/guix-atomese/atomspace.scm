@@ -74,7 +74,7 @@
              python-cython
              sparsehash))
       (propagated-inputs
-       (list guile-3.0))
+       (list guile-3.0 python))
       (synopsis "OpenCog AtomSpace hypergraph database")
       (description
        "The OpenCog AtomSpace is an in-RAM knowledge representation (KR)
