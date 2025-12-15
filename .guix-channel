@@ -1,4 +1,2 @@
-;; Guix channel configuration for guix-atomese
 (channel
-  (version 0)
-  (directory "."))
+ (version 0))
