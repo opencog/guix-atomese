@@ -53,7 +53,12 @@
       (build-system cmake-build-system)
       (arguments
        (list
-        #:configure-flags #~(list "-DCMAKE_BUILD_TYPE=Release")
+        #:configure-flags
+        #~(list "-DCMAKE_BUILD_TYPE=Release"
+                (string-append "-DGUILE_SITE_DIR=" #$output
+                               "/share/guile/site/3.0")
+                (string-append "-DGUILE_CCACHE_DIR=" #$output
+                               "/lib/guile/3.0/site-ccache"))
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
