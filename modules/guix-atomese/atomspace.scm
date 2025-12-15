@@ -55,7 +55,7 @@
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
-       (list cmake pkg-config gcc-toolchain))
+       (list cmake pkg-config gcc-toolchain guile-3.0))
       (inputs
        (list cogutil
              guile-3.0
