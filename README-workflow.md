@@ -4,9 +4,9 @@ Workflow
 
 For each project:
 ```
-cd /wherever
-git pull
-guix hash -rx .
+cd /tmp
+git clone --depth 1 https://github.com/opencog/whatever /tmp/whatever
+guix hash -rx /tmp/whatever
 ```
 THE DIRECTORY MUST BE CLEAN! `guix hash -rx .` hashes everything,
 including random junk files, the build dir, and everything else.

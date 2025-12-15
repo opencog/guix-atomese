@@ -7,7 +7,7 @@ see how things go.)
 
 There are two reasons to try guix:
 * As a replacement for docker, allowing OpenCog Atomese to be deployed
-  inn a localized container;
+  in a localized container;
 * As a way of getting OpenCog packages installed on arbitrary distros.
   since OpenCog is not packaged in either Debian or Fedora, never mind
   any smaller distros.
