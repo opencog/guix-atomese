@@ -47,7 +47,7 @@ guix install cogutil
 guix install atomspace
 
 # Or use a manifest
-guix package -m manifests/minimal.scm
+guix package -m manifests/base.scm
 ```
 
 ## Using Manifests
@@ -61,7 +61,7 @@ Several pre-defined manifests are available (or planned):
 Use a manifest to create a development environment:
 
 ```bash
-guix shell -m manifests/minimal.scm
+guix shell -m manifests/base.scm
 ```
 
 ## Building from Local Checkout
