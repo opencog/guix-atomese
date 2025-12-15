@@ -5,10 +5,10 @@
 ;; (cons* (channel
 ;;         (name 'atomese)
 ;;         (url "https://github.com/opencog/guix-atomese")
-;;         (branch "main"))
+;;         (branch "master"))
 ;;        %default-channels)
 
 (list (channel
         (name 'atomese)
         (url "https://github.com/opencog/guix-atomese")
-        (branch "main")))
+        (branch "master")))

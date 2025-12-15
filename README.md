@@ -27,7 +27,7 @@ Add this channel to your `~/.config/guix/channels.scm`:
 (cons* (channel
         (name 'atomese)
         (url "https://github.com/opencog/guix-atomese")
-        (branch "main"))
+        (branch "master"))
        %default-channels)
 ```
 
