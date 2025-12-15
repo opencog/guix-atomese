@@ -32,8 +32,8 @@
 
 (define-public cogutil
         ; commit is the git commit ID
-  (let ((commit "f67026f5ed1c614a9d1c1d2e230dab200aabe349")
-        (revision "0"))
+  (let ((commit "7e0eb13098d5aade2ab801fb923b0406eee222b8")
+        (revision "1"))
     (package
       (name "cogutil")
       (version (git-version "2.2.1" revision commit))
@@ -45,11 +45,12 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0cqa5cnnz31m5v8znj1byclr4ck9zf85i7rq3jzh013cchkspkl1"))))
+          (base32 "17ws0qrblzc4ms43zg9acdzx5ndmwlvd0cp2208lri32ksfd5xxw"))))
       (build-system cmake-build-system)
       (arguments
        (list
-        #:configure-flags #~(list "-DCMAKE_BUILD_TYPE=Release")
+        #:configure-flags #~(list "-DCMAKE_BUILD_TYPE=Release"
+                                  "-DSKIP_LDCONF=ON")
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs

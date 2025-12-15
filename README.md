@@ -37,6 +37,12 @@ Then update Guix:
 guix pull
 ```
 
+## Running in a container
+```
+guix shell --container cogutil
+```
+
+
 ## Installing Packages
 
 After adding the channel, install packages with:
