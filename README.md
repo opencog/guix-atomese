@@ -78,38 +78,57 @@ guix build atomspace
 ```
 
 ### Running a shell
-
+To use OpenCog on a temporary basis, within an isolated shell, just
+say `guix shell atomspace` -- they will give you a shell with guile,
+python3 and the AtomSpace in it. So, for example:
 
 ```
 guix shell atomspace
-guile
-(use-modules (opencog))
-
+$ guile
+> (use-modules (opencog))
+> (Concept "foo")
+> ^D
+$ python3
+>>> from opencog.atomspace import *
+>>> Concept("bar")
+^D
 ```
-
+The above shell has opencog, but is missing development tools such as
+`cmake`. To get those, try this:
 ```
 guix shell --development
 ```
+
 ### Running in a container
+Not yet. Still borken.
 ```
 guix shell --container cogutil
 ```
 
-
 ### Installing Packages
+I have not tried this yet.
 
-After adding the channel, install packages with:
+Install packages with:
 
 ```bash
 # Install individual packages
 guix install cogutil
 guix install atomspace
-
-# Or use a manifest
+```
+Or use a manifest (The menifest is currently broken.)
+```
 guix package -m manifests/base.scm
 ```
+Several pre-defined manifests are available (or planned):
 
-## Overview
+- `manifests/base.scm` - cogutil + atomspace only
+- `manifests/storage.scm` - adds disk and network storage
+- `manifests/sensory.scm` - adds sensori-motor interfaces
+
+Use a manifest to create a development environment:
+
+
+## Repo Overview
 
 This repository defines Guix packages for:
 - cogutil - OpenCog base utilities
@@ -122,20 +141,6 @@ This repository defines Guix packages for:
 - lg-atomese - Atomese bindings for Link Grammar
 - sensory - (Experimental) Sensorimotor interfaces
 - Maybe more, if/when things settle down ...
-
-## Using Manifests
-
-Several pre-defined manifests are available (or planned):
-
-- `manifests/base.scm` - cogutil + atomspace only
-- `manifests/storage.scm` - adds disk and network storage
-- `manifests/sensory.scm` - adds sensori-motor interfaces
-
-Use a manifest to create a development environment:
-
-```bash
-guix shell -m manifests/base.scm
-```
 
 ## Building from Local Checkout
 
