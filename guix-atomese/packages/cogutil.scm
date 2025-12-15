@@ -27,7 +27,7 @@
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages linux))
+  #:use-module (gnu packages base))
 
 (define-public cogutil
         ; commit is the git commit ID
