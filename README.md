@@ -2,15 +2,103 @@
 
 A Guix channel providing packages for the OpenCog Atomese ecosystem.
 
-(Experimental. This is brand new, as of December 2025. We'll have to
-see how things go.)
-
-There are two reasons to try guix:
+There are three reasons to try guix:
+* To provide a local shell that has all Atomese components installed,
+  so that new users can just "use it" without getting tangled up with
+  install issues;
 * As a replacement for docker, allowing OpenCog Atomese to be deployed
   in a localized container;
 * As a way of getting OpenCog packages installed on arbitrary distros.
-  since OpenCog is not packaged in either Debian or Fedora, never mind
-  any smaller distros.
+  OpenCog is not packaged in either Debian or Fedora, never mind any
+  smaller distros.
+
+These three different ways of automating the use of OpenCog are loosely
+documented below.
+
+(Experimental. This is brand new, as of December 2025. We'll have to
+see how things go.)
+
+## Overview
+There are several steps:
+* Install guix.
+* Configure the Atomese channel.
+* Guix pull
+* Build the Atomese packages.
+* A choice of:
+  -- Using Atomese in a local shell.
+  -- Installing all packages into the base OS filesystem.
+  -- Running a container with all of the OpenCog Atomese components in it.
+
+These steps are documented below.
+
+### Install Guix
+The official installer works fine:
+```
+  cd /tmp
+  wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+  chmod +x guix-install.sh
+  sudo ./guix-install.sh
+```
+Be sure to say `yes` to the question about `~/.bashrc` or `~/.profile`
+as otherwise, you'll end up doing it manually, anyway. Its basically
+just this:
+
+```
+  source ~/.guix-profile/etc/profile
+```
+
+### Adding This Channel
+
+Add this channel to your `~/.config/guix/channels.scm`:
+
+```scheme
+(cons* (channel
+        (name 'atomese)
+        (url "https://github.com/opencog/guix-atomese")
+        (branch "master"))
+       %default-channels)
+```
+
+### Guix pull
+The `guix pull` command syncs up with the latest guix packages. It is
+similar to `apt get upgrade` or `yum upgrade`. It will tak an hour if
+this is the first time that you run it; it will be faster on subsequent
+tries. But still slow -- maybe 3 to 10 minutes, because it tries to
+recompute a lot of hashes each go-around. So don't do this unless you
+have to.
+
+```bash
+guix pull
+```
+### Build the Atomese packages
+Build the various Atomese packages:
+```
+guix build cogutil
+guix build atomspace
+```
+
+### Running a shell
+```
+guix shell --development
+```
+### Running in a container
+```
+guix shell --container cogutil
+```
+
+
+### Installing Packages
+
+After adding the channel, install packages with:
+
+```bash
+# Install individual packages
+guix install cogutil
+guix install atomspace
+
+# Or use a manifest
+guix package -m manifests/base.scm
+```
 
 ## Overview
 
@@ -25,47 +113,6 @@ This repository defines Guix packages for:
 - lg-atomese - Atomese bindings for Link Grammar
 - sensory - (Experimental) Sensorimotor interfaces
 - Maybe more, if/when things settle down ...
-
-## Adding This Channel
-
-Add this channel to your `~/.config/guix/channels.scm`:
-
-```scheme
-(cons* (channel
-        (name 'atomese)
-        (url "https://github.com/opencog/guix-atomese")
-        (branch "master"))
-       %default-channels)
-```
-
-Then update Guix:
-
-```bash
-guix pull
-```
-
-## Running a development shell
-```
-guix shell --development
-```
-## Running in a container
-```
-guix shell --container cogutil
-```
-
-
-## Installing Packages
-
-After adding the channel, install packages with:
-
-```bash
-# Install individual packages
-guix install cogutil
-guix install atomspace
-
-# Or use a manifest
-guix package -m manifests/base.scm
-```
 
 ## Using Manifests
 
