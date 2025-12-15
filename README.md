@@ -35,9 +35,9 @@ These steps are documented below.
 The official installer works fine:
 ```
   cd /tmp
-  wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
-  chmod +x guix-install.sh
-  sudo ./guix-install.sh
+  wget https://guix.gnu.org/install.sh
+  chmod +x install.sh
+  sudo ./install.sh
 ```
 Be sure to say `yes` to the question about `~/.bashrc` or `~/.profile`
 as otherwise, you'll end up doing it manually, anyway. Its basically
@@ -78,6 +78,15 @@ guix build atomspace
 ```
 
 ### Running a shell
+
+
+```
+guix shell atomspace
+guile
+(use-modules (opencog))
+
+```
+
 ```
 guix shell --development
 ```
