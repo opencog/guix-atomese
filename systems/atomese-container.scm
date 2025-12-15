@@ -11,7 +11,9 @@
              (guix-atomese packages atomspace))
 
 (use-service-modules networking ssh)
-(use-package-modules bash coreutils guile)
+(use-package-modules bash coreutils guile
+                     less vim admin tmux terminals
+                     gdb time jq)
 
 (operating-system
   (host-name "atomese")
@@ -33,9 +35,22 @@
   ;; Packages available in the container
   (packages (append (list cogutil
                           atomspace
+                          ;; Core utilities
                           coreutils
                           bash
-                          guile-3.0)
+                          guile-3.0
+                          ;; Editors and pagers
+                          less
+                          vim
+                          ;; System tools
+                          lsof
+                          tmux
+                          byobu
+                          ;; Development tools
+                          gdb
+                          time
+                          xxd
+                          jq)
                     %base-packages))
 
   ;; Services
