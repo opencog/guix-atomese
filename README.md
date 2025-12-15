@@ -5,6 +5,13 @@ A Guix channel providing packages for the OpenCog Atomese ecosystem.
 (Experimental. This is brand new, as of December 2025. We'll have to
 see how things go.)
 
+There are two reasons to try guix:
+* As a replacement for docker, allowing OpenCog Atomese to be deployed
+  inn a localized container;
+* As a way of getting OpenCog packages installed on arbitrary distros.
+  since OpenCog is not packaged in either Debian or Fedora, never mind
+  any smaller distros.
+
 ## Overview
 
 This repository defines Guix packages for:

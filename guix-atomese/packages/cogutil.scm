@@ -45,7 +45,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "17ws0qrblzc4ms43zg9acdzx5ndmwlvd0cp2208lri32ksfd5xxw"))))
+          (base32 "1hshj3sn8379cbrzi7z22nl2b64h81lx5xcr1ymnkbwqwfacwzml"))))
       (build-system cmake-build-system)
       (arguments
        (list
