@@ -1,0 +1,13 @@
+# Emacs backup files
+*~
+\#*\#
+
+# Guile compiled files
+*.go
+
+# Build artifacts
+/build/
+
+# Editor files
+*.swp
+*.swo
