@@ -30,7 +30,8 @@
   #:use-module (gnu packages linux))
 
 (define-public cogutil
-  (let ((commit "master")
+        ; commit is the git commit ID
+  (let ((commit "f67026f5ed1c614a9d1c1d2e230dab200aabe349")
         (revision "0"))
     (package
       (name "cogutil")
