@@ -24,11 +24,13 @@
   #:use-module (guix build-system cmake)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
-  #:use-module (gnu packages gcc)
-  #:use-module (gnu packages commencement)
   #:use-module (gnu packages cmake)
-  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages commencement)
+  #:use-module (gnu packages datastructures)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages guile)
+  #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (guix-atomese cogutil))
@@ -55,12 +57,14 @@
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
-       (list cmake pkg-config gcc-toolchain guile-3.0))
+       (list cmake gcc-toolchain guile-3.0 pkg-config))
       (inputs
        (list cogutil
+             gmp
              guile-3.0
              python
-             python-cython))
+             python-cython
+             sparsehash))
       (synopsis "OpenCog AtomSpace hypergraph database")
       (description
        "The OpenCog AtomSpace is an in-RAM knowledge representation (KR)
