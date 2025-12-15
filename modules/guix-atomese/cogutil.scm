@@ -17,7 +17,7 @@
 ;;; License along with guix-atomese.  If not, see
 ;;; <https://www.gnu.org/licenses/>.
 
-(define-module (guix-atomese packages cogutil)
+(define-module (guix-atomese cogutil)
   #:use-module (guix packages)
   #:use-module (guix gexp)
   #:use-module (guix git-download)

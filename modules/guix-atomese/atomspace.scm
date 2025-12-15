@@ -17,7 +17,7 @@
 ;;; License along with guix-atomese.  If not, see
 ;;; <https://www.gnu.org/licenses/>.
 
-(define-module (guix-atomese packages atomspace)
+(define-module (guix-atomese atomspace)
   #:use-module (guix packages)
   #:use-module (guix gexp)
   #:use-module (guix git-download)
@@ -31,7 +31,7 @@
   #:use-module (gnu packages guile)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
-  #:use-module (guix-atomese packages cogutil))
+  #:use-module (guix-atomese cogutil))
 
 (define-public atomspace
   (let ((commit "4ed69872170ae0adecd79dd5a4253b48d89e3d5c")
