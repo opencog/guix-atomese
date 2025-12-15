@@ -44,6 +44,10 @@ Then update Guix:
 guix pull
 ```
 
+## Running a development shell
+```
+guix shell --development
+```
 ## Running in a container
 ```
 guix shell --container cogutil
