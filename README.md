@@ -76,6 +76,7 @@ Build the various Atomese packages:
 guix build cogutil
 guix build atomspace
 guix build atomspace-storage
+guix build atomspace-rocks
 ```
 
 ### Running a shell
@@ -84,7 +85,7 @@ say `guix shell atomspace` -- they will give you a shell with guile,
 python3 and the AtomSpace in it. So, for example:
 
 ```
-guix shell atomspace-storage
+guix shell atomspace-rocks
 $ guile
 > (use-modules (opencog))
 > (Concept "foo")
