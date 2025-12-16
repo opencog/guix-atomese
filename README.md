@@ -77,6 +77,7 @@ guix build cogutil
 guix build atomspace
 guix build atomspace-storage
 guix build atomspace-rocks
+guix build cogserver
 ```
 
 ### Running a shell
