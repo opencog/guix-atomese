@@ -62,13 +62,11 @@
                 (string-append "-DPYTHON_INSTALL_PREFIX=" #$output
                                "/lib/python"
                                #$(version-major+minor (package-version python))
-                               "/site-packages")
-                (string-append "-DCMAKE_MODULE_PATH="
-                               #$cogutil "/share/opencog/cmake"))
+                               "/site-packages"))
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
-       (list cmake gcc-toolchain guile-3.0 pkg-config))
+       (list atomspace cmake cogutil gcc-toolchain guile-3.0 pkg-config))
       (inputs
        (list atomspace
              cogutil
