@@ -82,6 +82,9 @@ guix build atomspace-cog
 guix build link-grammar
 guix build lg-atomese
 ```
+The last package, `lg-atomese` depends on all the ones that come
+before it, and thus buiding that one package will automatically
+cause all the others to built.
 
 ### Running a shell
 To use OpenCog on a temporary basis, within an isolated shell, just
