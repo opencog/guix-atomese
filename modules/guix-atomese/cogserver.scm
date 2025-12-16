@@ -36,7 +36,8 @@
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages tls)
   #:use-module (guix-atomese cogutil)
-  #:use-module (guix-atomese atomspace))
+  #:use-module (guix-atomese atomspace)
+  #:use-module (guix-atomese atomspace-storage))
 
 (define-public cogserver
   (let ((commit "4344d65061b6e75ff00d6393a6678efd1328cccc")
@@ -70,10 +71,11 @@
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
-       (list atomspace cmake cogutil gcc-toolchain guile-3.0 pkg-config))
+       (list atomspace atomspace-storage cmake cogutil gcc-toolchain guile-3.0 pkg-config))
       (inputs
        (list asio
              atomspace
+             atomspace-storage
              cogutil
              gmp
              guile-3.0
