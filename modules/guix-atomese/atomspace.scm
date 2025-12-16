@@ -37,8 +37,8 @@
   #:use-module (guix-atomese cogutil))
 
 (define-public atomspace
-  (let ((commit "594063637a628b6c6ab90d91999d68dd7c30fd06")
-        (revision "3"))
+  (let ((commit "d3aa4c0f5c3fb7cdb5b6dd2b45cb6a8d08d13ba8")
+        (revision "4"))
     (package
       (name "atomspace")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
@@ -51,7 +51,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "06j087ialqsrsd33460654dank791klqa6bjpr9my3qnmfhj6kxm"))))
+          (base32 "1x2cfzkdrn7dgsipxwwhcfrbl27ys8ypzjjz99za0n1ds3x4r46s"))))
       (build-system cmake-build-system)
       (arguments
        (list
