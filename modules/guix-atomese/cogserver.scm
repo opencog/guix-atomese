@@ -75,7 +75,7 @@
             (replace 'check
               (lambda _ (invoke "make" "check"))))))
       (native-inputs
-       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 pkg-config python-pytest))
+       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 pkg-config python python-pytest))
       (inputs
        (list asio
              atomspace

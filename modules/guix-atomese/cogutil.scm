@@ -29,6 +29,7 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages check)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages base))
 
 (define-public cogutil
@@ -58,7 +59,7 @@
             (replace 'check
               (lambda _ (invoke "make" "check"))))))
       (native-inputs
-       (list cmake cxxtest pkg-config python-pytest gcc-toolchain))
+       (list cmake cxxtest gcc-toolchain pkg-config python python-pytest))
       (inputs
        (list binutils    ; BFD library for pretty stack traces
              libiberty)) ; GCC libiberty for stack traces
