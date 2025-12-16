@@ -40,8 +40,8 @@
   #:use-module (guix-atomese atomspace-storage))
 
 (define-public cogserver
-  (let ((commit "4344d65061b6e75ff00d6393a6678efd1328cccc")
-        (revision "1"))
+  (let ((commit "16ddbe6a9072036edd3df711710cef385be3da47")
+        (revision "2"))
     (package
       (name "cogserver")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
@@ -54,7 +54,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0bvlbf36diisavhlq60mc6lcgw4s6gwwy6ks16457ax8fs9zrf1z"))))
+          (base32 "0j27d2qd50y8k28q2z5s0vsmrrz62qmhvr08vaxkggvzna5xksn3"))))
       (build-system cmake-build-system)
       (arguments
        (list
