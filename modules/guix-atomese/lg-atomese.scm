@@ -66,7 +66,7 @@
                 (string-append "-DPYTHON_INSTALL_PREFIX=" #$output
                                "/lib/python"
                                #$(version-major+minor (package-version python))
-                               "/site-packages")))
+                               "/site-packages"))))
       (native-inputs
        (list atomspace atomspace-storage cmake cogutil gcc-toolchain
              guile-3.0 link-grammar pkg-config))
