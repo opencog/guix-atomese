@@ -78,6 +78,7 @@ guix build atomspace
 guix build atomspace-storage
 guix build atomspace-rocks
 guix build cogserver
+guix build atomspace-cog
 ```
 
 ### Running a shell
@@ -86,7 +87,7 @@ say `guix shell atomspace` -- they will give you a shell with guile,
 python3 and the AtomSpace in it. So, for example:
 
 ```
-guix shell atomspace-rocks
+guix shell atomspace-rocks atomspace-cog
 $ guile
 > (use-modules (opencog))
 > (Concept "foo")
