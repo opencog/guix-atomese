@@ -61,7 +61,10 @@
                 (string-append "-DPYTHON_INSTALL_PREFIX=" #$output
                                "/lib/python"
                                #$(version-major+minor (package-version python))
-                               "/site-packages"))
+                               "/site-packages")
+                (string-append "-DCMAKE_MODULE_PATH="
+                               #$(this-package-input "cogutil")
+                               "/share/opencog/cmake"))
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
