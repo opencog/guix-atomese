@@ -37,8 +37,8 @@
   #:use-module (guix-atomese atomspace))
 
 (define-public atomspace-storage
-  (let ((commit "cfd80c003e3b3ce42ae93b35b53cfc8ca1284507")
-        (revision "1"))
+  (let ((commit "60841f772bb3b3423e5cdb58c9fbdde1947d20c2")
+        (revision "2"))
     (package
       (name "atomspace-storage")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
@@ -51,7 +51,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0056q5pydnjqbxsj7b4nqrzbjqv1aymqjbjljqdni672w82lfa5p"))))
+          (base32 "0vilfm51dmpfla43j23s044sy0a7s6smy4bqs5x10d9clgsdbpx5"))))
       (build-system cmake-build-system)
       (arguments
        (list
