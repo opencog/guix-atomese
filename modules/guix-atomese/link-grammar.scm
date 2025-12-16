@@ -30,6 +30,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages aspell)
   #:use-module (gnu packages libedit)
+  #:use-module (gnu packages ncurses)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages python)
   #:use-module (gnu packages swig)
@@ -85,6 +86,7 @@
              cogutil
              aspell
              libedit
+             ncurses
              pcre2
              python))
       (propagated-inputs
