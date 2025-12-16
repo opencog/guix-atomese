@@ -28,6 +28,7 @@
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages check)
   #:use-module (gnu packages base))
 
 (define-public cogutil
@@ -51,11 +52,9 @@
       (arguments
        (list
         #:configure-flags #~(list "-DCMAKE_BUILD_TYPE=Release"
-                                  "-DSKIP_LDCONF=ON")
-        ;; Skip tests for now; they require cxxtest
-        #:tests? #f))
+                                  "-DSKIP_LDCONF=ON")))
       (native-inputs
-       (list cmake pkg-config gcc-toolchain))
+       (list cmake cxxtest pkg-config python-pytest gcc-toolchain))
       (inputs
        (list binutils    ; BFD library for pretty stack traces
              libiberty)) ; GCC libiberty for stack traces

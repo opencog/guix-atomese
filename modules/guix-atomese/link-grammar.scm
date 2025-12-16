@@ -62,9 +62,7 @@
         #:configure-flags
         #~(list "--enable-python-bindings"
                 "--disable-hunspell"
-                "--enable-aspell")
-        ;; Skip tests for now
-        #:tests? #f))
+                "--enable-aspell")))
       (native-inputs
        (list autoconf
              autoconf-archive

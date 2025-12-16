@@ -32,6 +32,7 @@
   #:use-module (gnu packages guile)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages check)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (guix-atomese cogutil)
@@ -66,11 +67,9 @@
                 (string-append "-DPYTHON_INSTALL_PREFIX=" #$output
                                "/lib/python"
                                #$(version-major+minor (package-version python))
-                               "/site-packages"))
-        ;; Skip tests for now; they require cxxtest
-        #:tests? #f))
+                               "/site-packages")))
       (native-inputs
-       (list atomspace atomspace-storage cmake cogutil gcc-toolchain guile-3.0 pkg-config))
+       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 pkg-config python-pytest))
       (inputs
        (list atomspace
              atomspace-storage
