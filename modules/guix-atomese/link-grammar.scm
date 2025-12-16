@@ -66,6 +66,7 @@
         #:tests? #f))
       (native-inputs
        (list autoconf
+             autoconf-archive
              automake
              libtool
              flex
