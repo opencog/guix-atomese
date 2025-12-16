@@ -34,6 +34,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages serialization)
   #:use-module (gnu packages tls)
   #:use-module (guix-atomese cogutil)
   #:use-module (guix-atomese atomspace)
@@ -79,6 +80,7 @@
              cogutil
              gmp
              guile-3.0
+             jsoncpp
              openssl
              python
              python-cython))
