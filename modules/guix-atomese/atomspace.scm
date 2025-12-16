@@ -41,6 +41,7 @@
         (revision "1"))
     (package
       (name "atomspace")
+      ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
       (version (git-version "5.2.0" revision commit))
       (source
        (origin

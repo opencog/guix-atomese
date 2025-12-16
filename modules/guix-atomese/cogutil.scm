@@ -36,6 +36,7 @@
         (revision "6"))
     (package
       (name "cogutil")
+      ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
       (version (git-version "2.2.1" revision commit))
       (source
        (origin

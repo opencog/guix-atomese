@@ -43,7 +43,8 @@
         (revision "1"))
     (package
       (name "atomspace-cog")
-      (version (git-version "1.0.0" revision commit))
+      ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
+      (version (git-version "1.2.0" revision commit))
       (source
        (origin
          (method git-fetch)
