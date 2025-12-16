@@ -52,7 +52,11 @@
       (arguments
        (list
         #:configure-flags #~(list "-DCMAKE_BUILD_TYPE=Release"
-                                  "-DSKIP_LDCONF=ON")))
+                                  "-DSKIP_LDCONF=ON")
+        #:phases
+        #~(modify-phases %standard-phases
+            (replace 'check
+              (lambda _ (invoke "make" "check"))))))
       (native-inputs
        (list cmake cxxtest pkg-config python-pytest gcc-toolchain))
       (inputs
