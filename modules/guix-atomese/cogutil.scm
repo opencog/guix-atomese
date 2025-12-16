@@ -32,8 +32,8 @@
 
 (define-public cogutil
         ; commit is the git commit ID
-  (let ((commit "0fda827501d575f5beb58a00e79cea50a5ae7158")
-        (revision "5"))
+  (let ((commit "e0237dd21568de21f3fb259fee1cb587591488d3")
+        (revision "6"))
     (package
       (name "cogutil")
       (version (git-version "2.2.1" revision commit))
@@ -45,7 +45,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "13pgp64a6c2pjib0iy81gcixaggj8fcc2spa301yc2jmysz83zm1"))))
+          (base32 "1g4bgr6qqjknisfqxhaxclfknb6898qcrghvac1i2nyi7rnjx8hq"))))
       (build-system cmake-build-system)
       (arguments
        (list
