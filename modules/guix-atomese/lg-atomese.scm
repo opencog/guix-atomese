@@ -39,8 +39,8 @@
   #:use-module (guix-atomese link-grammar))
 
 (define-public lg-atomese
-  (let ((commit "17563d64a31d2e7bfb92eaf8c878c1ba6410f91d")
-        (revision "1"))
+  (let ((commit "7641325e46fde9160e751df4d5c8088cca9a911f")
+        (revision "2"))
     (package
       (name "lg-atomese")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
@@ -53,7 +53,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0p2ggn6129ry4kqp44c3ldd2dncj51mbm61g8vynb3p1v9j5nilp"))))
+          (base32 "1w9q64z67adr6yn3436vygz0iczc67fxj3xz49ilyj8fgndsgh41"))))
       (build-system cmake-build-system)
       (arguments
        (list
