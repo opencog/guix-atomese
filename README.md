@@ -79,6 +79,7 @@ guix build atomspace-storage
 guix build atomspace-rocks
 guix build cogserver
 guix build atomspace-cog
+guix build link-grammar
 ```
 
 ### Running a shell
