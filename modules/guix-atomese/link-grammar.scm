@@ -29,7 +29,7 @@
   #:use-module (gnu packages flex)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages aspell)
-  #:use-module (gnu packages readline)
+  #:use-module (gnu packages libedit)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages python)
   #:use-module (gnu packages swig)
