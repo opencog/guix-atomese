@@ -59,6 +59,8 @@
         #~(list "-DCMAKE_BUILD_TYPE=Release"
                 (string-append "-DGUILE_SITE_DIR=" #$output
                                "/share/guile/site/3.0")
+                (string-append "-DGUILE_CCACHE_DIR=" #$output
+                               "/lib/guile/3.0/site-ccache")
                 (string-append "-DPYTHON_INSTALL_PREFIX=" #$output
                                "/lib/python"
                                #$(version-major+minor (package-version python))
