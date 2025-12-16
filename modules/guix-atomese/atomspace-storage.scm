@@ -64,8 +64,7 @@
                                #$(version-major+minor (package-version python))
                                "/site-packages")
                 (string-append "-DCMAKE_MODULE_PATH="
-                               #$(this-package-input "cogutil")
-                               "/share/opencog/cmake"))
+                               #$cogutil "/share/opencog/cmake"))
         ;; Skip tests for now; they require cxxtest
         #:tests? #f))
       (native-inputs
