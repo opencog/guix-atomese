@@ -75,6 +75,7 @@ Build the various Atomese packages:
 ```
 guix build cogutil
 guix build atomspace
+guix build sensory
 guix build atomspace-storage
 guix build atomspace-rocks
 guix build cogserver
@@ -83,9 +84,10 @@ guix build link-grammar
 guix build lg-atomese
 guix build link-grammar-atomspace
 ```
-The last package, `link-grammar-atomspace` depends on all the ones
-that come before it, and thus buiding that one package will
-automatically cause all the others to built.
+The last package, `link-grammar-atomspace` depends on (almost) all of
+the ones that come before it, and thus buiding that one package will
+automatically cause all the others to built. The `sensory` package is
+built separately.
 
 (Note there is a "circular" depedency, here: `lg-atomese` depends on
 `link-grammar`, but `link-grammar-atomspace` depends on `lg-atomese`.
