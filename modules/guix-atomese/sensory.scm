@@ -43,7 +43,7 @@
     (package
       (name "sensory")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
-      (version (git-version "0.1.0" revision commit))
+      (version (git-version "0.5.1" revision commit))
       (source
        (origin
          (method git-fetch)
