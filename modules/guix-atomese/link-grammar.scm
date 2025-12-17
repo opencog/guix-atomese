@@ -22,6 +22,7 @@
   #:use-module (guix gexp)
   #:use-module (guix git-download)
   #:use-module (guix build-system gnu)
+  #:use-module (guix search-paths)
   #:use-module (guix utils)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
@@ -84,7 +85,11 @@
              python
              sqlite))
       (propagated-inputs
-       (list python))
+       (list glibc-locales python))
+      (search-paths
+       (list (search-path-specification
+              (variable "GUIX_LOCPATH")
+              (files '("lib/locale")))))
       (synopsis "Link Grammar natural language parser")
       (description
        "The Link Grammar Parser is a syntactic parser of English, Russian,
