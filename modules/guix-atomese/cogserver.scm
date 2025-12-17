@@ -78,8 +78,7 @@
       (native-inputs
        (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 netcat-openbsd pkg-config python python-pytest))
       (inputs
-       (list asio
-             atomspace
+       (list atomspace
              atomspace-storage
              cogutil
              gmp
@@ -89,7 +88,7 @@
              python
              python-cython))
       (propagated-inputs
-       (list guile-3.0 guile-readline python))
+       (list asio guile-3.0 guile-readline python))
       (synopsis "OpenCog CogServer for network-accessible AtomSpace")
       (description
        "The CogServer provides a network server for the AtomSpace, allowing
