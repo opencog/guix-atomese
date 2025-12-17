@@ -25,6 +25,7 @@
   #:use-module (guix utils)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
+  #:use-module (gnu packages admin)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages gcc)
@@ -75,7 +76,7 @@
             (replace 'check
               (lambda _ (invoke "make" "check"))))))
       (native-inputs
-       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 pkg-config python python-pytest))
+       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain guile-3.0 netcat-openbsd pkg-config python python-pytest))
       (inputs
        (list asio
              atomspace
