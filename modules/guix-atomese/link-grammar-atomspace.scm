@@ -33,6 +33,7 @@
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages swig)
   #:use-module (guix-atomese cogutil)
   #:use-module (guix-atomese atomspace)
@@ -89,7 +90,8 @@
              libedit
              ncurses
              pcre2
-             python))
+             python
+             sqlite))
       (propagated-inputs
        (list python))
       (synopsis "Link Grammar parser with AtomSpace integration")

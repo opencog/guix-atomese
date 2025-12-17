@@ -33,6 +33,7 @@
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages swig))
 
 (define-public link-grammar
@@ -71,7 +72,8 @@
              libedit
              ncurses
              pcre2
-             python))
+             python
+             sqlite))
       (propagated-inputs
        (list python))
       (synopsis "Link Grammar natural language parser")
