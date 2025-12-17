@@ -25,6 +25,7 @@
   #:use-module (guix utils)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
+  #:use-module (gnu packages check)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages gcc)
@@ -44,7 +45,7 @@
     (package
       (name "lg-atomese")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
-      (version (git-version "0.1.4" revision commit))
+      (version (git-version "1.0.0" revision commit))
       (source
        (origin
          (method git-fetch)
@@ -72,7 +73,7 @@
             (replace 'check
               (lambda _ (invoke "make" "check"))))))
       (native-inputs
-       (list atomspace atomspace-storage cmake cogutil gcc-toolchain
+       (list atomspace atomspace-storage cmake cogutil cxxtest gcc-toolchain
              guile-3.0 link-grammar pkg-config))
       (inputs
        (list atomspace
