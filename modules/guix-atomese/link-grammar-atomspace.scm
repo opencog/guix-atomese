@@ -29,7 +29,7 @@
   #:use-module (gnu packages base)
   #:use-module (gnu packages flex)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages aspell)
+  #:use-module (gnu packages hunspell)
   #:use-module (gnu packages libedit)
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages pcre)
@@ -62,10 +62,6 @@
       (build-system gnu-build-system)
       (arguments
        (list
-        #:configure-flags
-        #~(list "--enable-python-bindings"
-                "--disable-hunspell"
-                "--enable-aspell")
         #:phases
         #~(modify-phases %standard-phases
             (add-before 'check 'set-locale-path
@@ -73,11 +69,11 @@
                 (let ((locales (assoc-ref (or native-inputs inputs) "glibc-locales")))
                   (setenv "GUIX_LOCPATH" (string-append locales "/lib/locale"))))))))
       (native-inputs
-       (list aspell-dict-en
-             autoconf
+       (list autoconf
              autoconf-archive
              automake
              glibc-locales
+             hunspell-dict-en
              libtool
              flex
              pkg-config
@@ -95,7 +91,7 @@
              atomspace-cog
              cogutil
              lg-atomese
-             aspell
+             hunspell
              libedit
              ncurses
              pcre2
