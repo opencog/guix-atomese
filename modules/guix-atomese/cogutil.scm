@@ -34,8 +34,8 @@
 
 (define-public cogutil
         ; commit is the git commit ID
-  (let ((commit "3f881eb8cccdc0bf7c1e62231ed593b2005c20aa")
-        (revision "8"))
+  (let ((commit "8bd11fc3a08404b652e3fd2413b5ec7189b4ea68")
+        (revision "9"))
     (package
       (name "cogutil")
       ; XXX FIXME Hardcoded version number; should be $PACKAGE_VERSION
@@ -48,7 +48,7 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "0vbysi31fqa7z9lag3qjzz21fpja067rlk63g9049babagwgc7v9"))))
+          (base32 "0d33hi5z3qlckmlg35pz70gww3hms2bf748v8zfys41r7na7h6m4"))))
       (build-system cmake-build-system)
       (arguments
        (list
