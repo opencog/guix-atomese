@@ -81,10 +81,15 @@ guix build cogserver
 guix build atomspace-cog
 guix build link-grammar
 guix build lg-atomese
+guix build link-grammar-atomspace
 ```
-The last package, `lg-atomese` depends on all the ones that come
-before it, and thus buiding that one package will automatically
-cause all the others to built.
+The last package, `link-grammar-atomspace` depends on all the ones
+that come before it, and thus buiding that one package will
+automatically cause all the others to built.
+
+(Note there is a "circular" depedency, here: `lg-atomese` depends on
+`link-grammar`, but `link-grammar-atomspace` depends on `lg-atomese`.
+Thus, two builds.)
 
 ### Running a shell
 To use OpenCog on a temporary basis, within an isolated shell, just
@@ -92,7 +97,7 @@ say `guix shell atomspace` -- they will give you a shell with guile,
 python3 and the AtomSpace in it. So, for example:
 
 ```
-guix shell atomspace-rocks atomspace-cog
+guix shell link-grammar-atomspace
 $ guile
 > (use-modules (opencog))
 > (Concept "foo")

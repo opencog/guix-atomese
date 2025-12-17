@@ -17,7 +17,7 @@
 ;;; License along with guix-atomese.  If not, see
 ;;; <https://www.gnu.org/licenses/>.
 
-(define-module (guix-atomese link-grammar)
+(define-module (guix-atomese link-grammar-atomspace)
   #:use-module (guix packages)
   #:use-module (guix gexp)
   #:use-module (guix git-download)
@@ -33,13 +33,19 @@
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages swig))
+  #:use-module (gnu packages swig)
+  #:use-module (guix-atomese cogutil)
+  #:use-module (guix-atomese atomspace)
+  #:use-module (guix-atomese atomspace-storage)
+  #:use-module (guix-atomese atomspace-rocks)
+  #:use-module (guix-atomese atomspace-cog)
+  #:use-module (guix-atomese lg-atomese))
 
-(define-public link-grammar
+(define-public link-grammar-atomspace
   (let ((commit "c6ff88dd4035a421dd315121a4ceabcec30b4536")
         (revision "1"))
     (package
-      (name "link-grammar")
+      (name "link-grammar-atomspace")
       ; XXX FIXME Hardcoded version number; should be from configure.ac
       (version (git-version "5.13.0" revision commit))
       (source
@@ -65,22 +71,33 @@
              libtool
              flex
              pkg-config
-             swig))
+             swig
+             atomspace
+             atomspace-storage
+             atomspace-rocks
+             atomspace-cog
+             cogutil
+             lg-atomese))
       (inputs
-       (list aspell
+       (list atomspace
+             atomspace-storage
+             atomspace-rocks
+             atomspace-cog
+             cogutil
+             lg-atomese
+             aspell
              libedit
              ncurses
              pcre2
              python))
       (propagated-inputs
        (list python))
-      (synopsis "Link Grammar natural language parser")
+      (synopsis "Link Grammar parser with AtomSpace integration")
       (description
-       "The Link Grammar Parser is a syntactic parser of English, Russian,
-German, and other languages.  It is based on Link Grammar, an original
-theory of syntax and morphology.  Given a sentence, the system assigns
-to it a syntactic structure, which consists of a set of labeled links
-connecting pairs of words.  The parser also produces a constituent
-representation of a sentence (showing noun phrases, verb phrases, etc.).")
+       "The Link Grammar Parser with AtomSpace integration enables parsing
+natural language sentences and storing the resulting syntactic structures
+directly in the OpenCog AtomSpace hypergraph database.  This package builds
+Link Grammar with full AtomSpace support, including RocksDB persistence
+and CogServer network distribution capabilities.")
       (home-page "https://opencog.github.io/link-grammar-website/")
       (license license:lgpl2.1+))))
