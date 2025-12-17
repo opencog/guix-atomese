@@ -62,6 +62,10 @@
       (build-system gnu-build-system)
       (arguments
        (list
+        #:configure-flags
+        #~(list (string-append "--with-hunspell-dictdir="
+                               #$(this-package-native-input "hunspell-dict-en")
+                               "/share/hunspell"))
         #:phases
         #~(modify-phases %standard-phases
             (add-before 'check 'set-locale-path
