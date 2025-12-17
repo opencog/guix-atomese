@@ -26,6 +26,7 @@
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages)
   #:use-module (gnu packages autotools)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages flex)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages aspell)
@@ -64,11 +65,19 @@
         #:configure-flags
         #~(list "--enable-python-bindings"
                 "--disable-hunspell"
-                "--enable-aspell")))
+                "--enable-aspell")
+        #:phases
+        #~(modify-phases %standard-phases
+            (add-before 'check 'set-locale-path
+              (lambda* (#:key native-inputs inputs #:allow-other-keys)
+                (let ((locales (assoc-ref (or native-inputs inputs) "glibc-locales")))
+                  (setenv "GUIX_LOCPATH" (string-append locales "/lib/locale"))))))))
       (native-inputs
-       (list autoconf
+       (list aspell-dict-en
+             autoconf
              autoconf-archive
              automake
+             glibc-locales
              libtool
              flex
              pkg-config
